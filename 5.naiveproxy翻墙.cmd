@@ -4,9 +4,9 @@ cls
 CD /D "%~dp0"
 @echo off
 
-echo ÊÇ·ñÖ´ĞĞIP¸üĞÂ£¿IP¸üĞÂ´ÓÔÆ¶Ë¸üĞÂIPÅäÖÃÒÔ½â¾ö·âËøÎÊÌâ£¡µÚÒ»´ÎÊ¹ÓÃÎñ±ØÏÈ¸üĞÂIP.
-echo °´3Ìø¹ı£¬°´1Ñ¡Ôñip1¸üĞÂ£¬Èôip1²»ºÃÓÃÔÙ°´2Ñ¡ip2¸üĞÂ£¬Èç¹û¸üĞÂºó¶¼ÓÃ²»ÁË£¬Çë·¢ÓÊ¼şµ½kebi2014@gmail.com½øĞĞ·´À¡£¡
-choice /C 123 /T 15 /D 3 /M "1¡¢ip1¸üĞÂ  2¡¢ip2¸üĞÂ  3¡¢Ìø¹ı"
+echo æ˜¯å¦æ‰§è¡ŒIPæ›´æ–°ï¼ŸIPæ›´æ–°ä»äº‘ç«¯æ›´æ–°IPé…ç½®ä»¥è§£å†³å°é”é—®é¢˜ï¼ç¬¬ä¸€æ¬¡ä½¿ç”¨åŠ¡å¿…å…ˆæ›´æ–°IP.
+echo æŒ‰3è·³è¿‡ï¼ŒæŒ‰1é€‰æ‹©ip1æ›´æ–°ï¼Œè‹¥ip1ä¸å¥½ç”¨å†æŒ‰2é€‰ip2æ›´æ–°ï¼Œå¦‚æœæ›´æ–°åéƒ½ç”¨ä¸äº†ï¼Œè¯·å‘é‚®ä»¶åˆ°kebi2014@gmail.comè¿›è¡Œåé¦ˆï¼
+choice /C 123 /T 15 /D 3 /M "1ã€ip1æ›´æ–°  2ã€ip2æ›´æ–°  3ã€è·³è¿‡"
 if errorlevel 3 goto startfq
 if errorlevel 2 goto ip2
 if errorlevel 1 goto ip1
@@ -23,17 +23,17 @@ goto startfq
  
 start "" "%~dp0naiveproxy\naive.exe" .\naiveproxy\config.json
 
-echo µÈ´ı·­Ç½Èí¼şÆô¶¯£¬ÇëÉÔºò...
+echo ç­‰å¾…ç¿»å¢™è½¯ä»¶å¯åŠ¨ï¼Œè¯·ç¨å€™...
 IF EXIST %~dp0Browser\chrome.exe (
-    start %~dp0Browser\chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:1080" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1" https://www.googl.com
+    start %~dp0Browser\chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:1080" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1" https://whoer.net/zh
 ) ELSE (
 	%SystemRoot%\System32\reg.exe query "HKLM\Software\Microsoft\Windows\CurrentVersion\App Paths\chrome.exe" >nul 2>&1
 	IF  not errorlevel 1 (
-		start chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:1080" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1" https://www.googl.com
+		start chrome.exe --user-data-dir=%~dp0chrome-user-data --proxy-server="socks5://127.0.0.1:1080" --host-resolver-rules="MAP * ~NOTFOUND , EXCLUDE 127.0.0.1" https://whoer.net/zh
 	) else ( 
-		echo Chromeä¯ÀÀÆ÷²»´æÔÚ»òÃ»ÓĞÕıÈ·°²×°£¬Çë³¢ÊÔÖØĞÂ°²×°Chromeä¯ÀÀÆ÷
-		echo »òÕß²ÉÓÃÒÔÏÂ°ì·¨£º
-		echo ÓÒ¼üµã×ÀÃæµÄGoogle ChromeÍ¼±ê£¬ÔÙµãÊôĞÔ£¬ÕÒµ½chrome.exeÎÄ¼şµÄÂ·¾¶£¬È»ºó´ò¿ªÄÇ¸öÄ¿Â¼£¬°Ñchrome.exe Á¬Í¬ÄÇ¸öÄ¿Â¼ÏÂµÄËùÓĞ×ÓÎÄ¼ş¼ĞºÍÎÄ¼ş£¬Ò»Æğ¿½±´µ½ChromeGoÎÄ¼ş¼ĞÏÂµÄBrowserÄ¿Â¼ÀïÃæ£¬È»ºóÖØĞÂÆô¶¯ChromeGoµÄ·­Ç½½Å±¾¡£
+		echo Chromeæµè§ˆå™¨ä¸å­˜åœ¨æˆ–æ²¡æœ‰æ­£ç¡®å®‰è£…ï¼Œè¯·å°è¯•é‡æ–°å®‰è£…Chromeæµè§ˆå™¨
+		echo æˆ–è€…é‡‡ç”¨ä»¥ä¸‹åŠæ³•ï¼š
+		echo å³é”®ç‚¹æ¡Œé¢çš„Google Chromeå›¾æ ‡ï¼Œå†ç‚¹å±æ€§ï¼Œæ‰¾åˆ°chrome.exeæ–‡ä»¶çš„è·¯å¾„ï¼Œç„¶åæ‰“å¼€é‚£ä¸ªç›®å½•ï¼ŒæŠŠchrome.exe è¿åŒé‚£ä¸ªç›®å½•ä¸‹çš„æ‰€æœ‰å­æ–‡ä»¶å¤¹å’Œæ–‡ä»¶ï¼Œä¸€èµ·æ‹·è´åˆ°ChromeGoæ–‡ä»¶å¤¹ä¸‹çš„Browserç›®å½•é‡Œé¢ï¼Œç„¶åé‡æ–°å¯åŠ¨ChromeGoçš„ç¿»å¢™è„šæœ¬ã€‚
 		pause
 	)
 )
